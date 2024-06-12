@@ -6,7 +6,7 @@ from flask_swagger_ui import get_swaggerui_blueprint
 from app.controllers.user_controller import user_bp
 
 from app.database import db
-
+# solo usuarios 
 app = Flask(__name__)
 
 # Configuración de la clave secreta para JWT
