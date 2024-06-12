@@ -2,6 +2,9 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_swagger_ui import get_swaggerui_blueprint
 
+
+from app.controllers.user_controller import user_bp
+
 from app.database import db
 
 app = Flask(__name__)
@@ -33,6 +36,8 @@ db.init_app(app)
 jwt = JWTManager(app)
 
 
+
+app.register_blueprint(user_bp, url_prefix="/api")
 # Crea las tablas si no existen
 with app.app_context():
     db.create_all()
