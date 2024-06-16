@@ -3,7 +3,7 @@ def test_customer_get_restaurants(test_client, customer_auth_headers):
     assert response.status_code == 200
     assert isinstance(response.json, list)
 
-def test_customer_get_restaurant(test_client, customer_auth_headers):
+def test_customer_get_restaurant(test_client, customer_auth_headers, admin_auth_headers):
     # Primero crea un restaurante como admin para que el cliente pueda verlo
     admin_data = {
         "name": "Burger Palace",
